@@ -248,8 +248,6 @@
 		introAnimation.fromTo( "#mask_x2 circle", 3, { attr:{ cx: 340, cy: 185, r: 80 } }, { attr:{ cx: 230, cy: 90, r: 80 }, ease: Expo.easeInOut }, 1 );
 		//introAnimation.fromTo( "#mask_x2 rect", 3, { attr:{ y: 120 } }, { attr:{ y: 40 }, ease: Expo.easeInOut }, 0.1 );
 		
-		TweenMax.fromTo( "#scrollme", 1, { autoAlpha: 0 }, { autoAlpha: 1, yoyo: true, repeat: -1, ease: Linear.easeNone } );
-
 		introAnimation.timeScale(1);
 		introAnimation.play();
 	}
