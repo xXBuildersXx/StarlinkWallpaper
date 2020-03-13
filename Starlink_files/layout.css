@@ -1,0 +1,771 @@
+@font-face {
+    font-family: 'DIN_Regular';
+	src: url("/web/20190524043956im_/https://www.starlink.com/fonts/D-DIN.ttf") format("ttf"),
+		url("/web/20190524043956im_/https://www.starlink.com/fonts/D-DIN.otf") format("otf"),
+		url("/web/20190524043956im_/https://www.starlink.com/fonts/D-DIN.woff") format("woff"),
+		url("/web/20190524043956im_/https://www.starlink.com/fonts/D-DIN.woff") format("woff");
+}
+@font-face {
+    font-family: 'DIN_Bold';
+	src: url("/web/20190524043956im_/https://www.starlink.com/fonts/D-DIN-Bold.ttf") format("ttf"),
+		url("/web/20190524043956im_/https://www.starlink.com/fonts/D-DIN-Bold.otf") format("otf"),
+		url("/web/20190524043956im_/https://www.starlink.com/fonts/D-DIN-Bold.woff") format("woff"),
+		url("/web/20190524043956im_/https://www.starlink.com/fonts/D-DIN-Bold.woff") format("woff");
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Body - General Layout Structure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #000000;
+	font: 16px/30px Helvetica, Arial, Verdana, geneva, sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	text-align: left;
+	color: #FFF;
+	min-width: 360px;
+
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+
+	}
+
+	img {
+		border: 0;
+		padding: 0;
+		border-style: none;
+		}
+
+	a { font: 16px/28px Helvetica, Arial, Verdana, geneva, sans-serif; font-weight: normal; font-style: normal;}
+	a:link { color: #FFFFFF; text-decoration: none; }
+	a:active { color: #FFFFFF; text-decoration: none; outline: none; }
+	a:visited { color: #FFFFFF; text-decoration: none; }
+	a:hover { color: #FFFFFF; text-decoration: none; } /*#fa6966;*/
+	a:focus { outline: none; }
+
+	#footernav a {
+		display: inline-block;
+		font: 12px/14px 'DIN_Regular', Helvetica, Arial, Verdana, geneva, sans-serif;
+		font-weight: normal;
+		font-style: normal;
+		margin: 0px 20px 0px 0px;
+	}
+
+	.tweenAll_025 {
+		-webkit-transition: all 0.25s cubic-bezier(0.25,1,0.25,1);
+		   -moz-transition: all 0.25s cubic-bezier(0.25,1,0.25,1);
+			-ms-transition: all 0.25s cubic-bezier(0.25,1,0.25,1);
+			 -o-transition: all 0.25s cubic-bezier(0.25,1,0.25,1);
+				transition: all 0.25s cubic-bezier(0.25,1,0.25,1);
+		}
+	.tweenAll_05 {
+		-webkit-transition: all 0.5s cubic-bezier(0.25,1,0.25,1);
+		   -moz-transition: all 0.5s cubic-bezier(0.25,1,0.25,1);
+			-ms-transition: all 0.5s cubic-bezier(0.25,1,0.25,1);
+			 -o-transition: all 0.5s cubic-bezier(0.25,1,0.25,1);
+				transition: all 0.5s cubic-bezier(0.25,1,0.25,1);
+		}
+	.tweenAll_75 {
+		-webkit-transition: all 0.75s cubic-bezier(0.25,1,0.25,1);
+		   -moz-transition: all 0.75s cubic-bezier(0.25,1,0.25,1);
+			-ms-transition: all 0.75s cubic-bezier(0.25,1,0.25,1);
+			 -o-transition: all 0.75s cubic-bezier(0.25,1,0.25,1);
+				transition: all 0.75s cubic-bezier(0.25,1,0.25,1);
+		}
+	.tweenAll_1 {
+		-webkit-transition: all 1s cubic-bezier(0.25,1,0.25,1);
+		   -moz-transition: all 1s cubic-bezier(0.25,1,0.25,1);
+			-ms-transition: all 1s cubic-bezier(0.25,1,0.25,1);
+			 -o-transition: all 1s cubic-bezier(0.25,1,0.25,1);
+				transition: all 1s cubic-bezier(0.25,1,0.25,1);
+		}
+
+	h1 {
+		position: relative;
+		font: 76px/80px 'DIN_Bold', Helvetica, Arial, Verdana, sans-serif;
+		font-weight: normal;
+		font-style: normal;
+		text-transform: uppercase;
+		color: #FFF;
+    	margin: auto;
+		}
+
+	h2 {
+		position: relative;
+		font: 46px/50px 'DIN_Bold', Helvetica, Arial, Verdana, sans-serif;
+		font-weight: normal;
+		font-style: normal;
+		text-transform: uppercase;
+		color: #FFF;
+    	margin: auto;
+		}
+
+	h3 {
+		position: relative;
+		font: 16px/18px 'DIN_Bold', Helvetica, Arial, Verdana, sans-serif;
+		font-weight: normal;
+		font-style: normal;
+		color: #FFF;
+		margin: auto;
+		margin-bottom: 18px;
+		}
+
+		#iss_section5 h3 {
+			text-shadow: 0px 0px 15px rgba(150, 150, 150, 1);
+		}
+
+	p {
+		margin: 1em 0px 1em 0px;
+		}
+
+	p.text_solo {
+		font: 16px/36px Helvetica, Arial, Verdana, geneva, sans-serif;
+		}
+
+		a.close {
+			display: block;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			width: 50px;
+			height: 50px;
+			}
+			a.close svg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 50px;
+				height: 50px;
+				}
+				a.close polyline,
+				a.close circle,
+				a.close line {
+					stroke: #FFFFFF;
+				}
+				a.close .bracket_x,
+				a.close .circle_x {
+					display: none;
+				}
+	a.btn {
+		display: inline-block;
+		min-width: 130px;
+		padding: 0 5px;
+		margin-top: 40px;
+		border: 2px solid #fff;
+		overflow: hidden;
+		}
+		.btn .hover {
+			display: none;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #ffffff;
+			}
+		.btn .text {
+			font: 14px/50px 'DIN_Bold', Helvetica, Arial, Verdana, geneva, sans-serif;
+			color: #fff;
+			text-transform: uppercase;
+			width: 100%;
+			text-align: center;
+			}
+
+	body.isMobile .hover {
+		display: none;
+	}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GENERIC STUFF
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	#wrapper {
+		display: block;
+		position: relative;
+		width: 100%;
+		}
+
+		.section {
+			display: block;
+			position: relative;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			background-color: #000000;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			overflow: hidden;
+			}
+			.section-inner {
+				display: block;
+				}
+				.thin {
+					min-height: 250px;
+					}
+				.thin p {
+					margin: 50px 0;
+					}
+
+			.interactive-background {
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				margin: 0;
+				padding: 0;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				}
+
+				#cones {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/bg_cones.jpg);
+					background-position: top center;
+					}
+
+				#array {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/bg_array.jpg);
+					}
+					#array p {
+						font: 26px/36px Helvetica, Arial, Verdana, geneva, sans-serif;
+					}
+
+				#webcast {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/bg_webcast_darker.jpg);
+					}
+
+				#debris {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/bg_debris.jpg);
+					background-position: bottom center;
+					}
+
+			@media screen and (max-width: 800px) {
+				#debris {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/bg_debris_mobile.jpg);
+					background-position: center 70%;
+					}
+			}
+
+			.swiper-slide {
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				}
+
+			.gallery-background {
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				margin: 0;
+				padding: 0;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				}
+				.caption {
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 100px;
+					background-color: #000;
+					}
+					.description {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						width: 75%;
+						max-width: 900px;
+						font: 16px/24px 'DIN_Bold', Helvetica, Arial, Verdana, sans-serif;
+						font-weight: normal;
+						text-align: center;
+						transform: translate(-50%,-50%);
+						text-transform: uppercase;
+						}
+
+				#gallery1 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/starlink1.jpg);
+					}
+
+				#gallery2 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/starlink2.jpg);
+					}
+
+				#gallery3 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/starlink3.jpg);
+					}
+
+
+				#featured1 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite__LESSMASS.jpg);
+					}
+
+				#featured2 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite__ANTENNA.jpg);
+					}
+
+				#featured3 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite__SOLAR_DISPLAY.jpg);
+					}
+
+				#featured4 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite__ION_THRUSTER.jpg);
+					}
+
+				#featured5 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite__STARTRACKER.jpg);
+					}
+
+				#featured6 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite__COLLISION_AVOIDANCE.jpg);
+					}
+
+			@media screen and (max-width: 800px) {
+				/*
+				#gallery1 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/starlink1_mobile.jpg);
+					background-position: top center;
+					}
+
+				#gallery2 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/starlink2_mobile.jpg);
+					background-position: top center;
+					}
+ 				*/
+				#gallery3 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/starlink3_mobile.jpg);
+					background-position: center center;
+					}
+
+				#gallery3 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/starlink3_mobile.jpg);
+					background-position: 80% 50%;
+					}
+
+				#featured1 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite_mobile__LESS_COMPACT.jpg);
+					}
+
+				#featured2 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite_mobile__ANTENNAS.jpg);
+					}
+
+				#featured3 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite_mobile__SOLAR.jpg);
+					}
+
+				#featured4 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite_mobile__ION_THRUSTER.jpg);
+					}
+
+				#featured5 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite_mobile__STARTRACKER.jpg);
+					}
+
+				#featured6 .gallery-background  {
+					background-image: url(/web/20190524043956im_/https://www.starlink.com/images/satellite/satellite_mobile__COLLISION_AVOIDANCE.jpg);
+					}
+			}
+
+			.inner-wide {
+				margin: 0px auto;
+				padding: 0px 25px 0px 25px;
+				text-align: center;
+				}
+				.inner-wide.thin {
+					max-width: 700px;
+					}
+
+			.inner-center {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 80%;
+				max-width: 900px;
+				font: 16px/30px Helvetica, Arial, Verdana, sans-serif;
+				font-weight: normal;
+				text-align: center;
+				transform: translate(-50%,-50%);
+				}
+
+			.inner-center-thin {
+				position: relative;
+				width: 80%;
+				max-width: 900px;
+				font: 16px/30px Helvetica, Arial, Verdana, sans-serif;
+				font-weight: normal;
+				text-align: center;
+				margin: 50px auto;
+				}
+
+			.inner-left {
+				position: absolute;
+				bottom: 20%;
+				left: 100px;
+				width: 45%;
+				max-width: 500px;
+				}
+
+			.inner-left-middle {
+				position: absolute;
+				top: 50%;
+				left: 100px;
+				width: 450px;
+				transform: translate(0%, -50%);
+				}
+
+			.inner-left-top {
+				position: absolute;
+				top: 10%;
+				left: 100px;
+				width: 45%;
+				max-width: 500px;
+				}
+			.inner-right {
+				position: absolute;
+				bottom: 20%;
+				right: 100px;
+				width: 45%;
+				max-width: 500px;
+				}
+			.inner-right-top {
+				position: absolute;
+				top: 10%;
+				right: 100px;
+				width: 45%;
+				max-width: 500px;
+				}
+
+		.video_container {
+			overflow: hidden;
+			}
+
+			.video_container video {
+				/* Make video to at least 100% wide and tall */
+				min-width: 100%;
+				min-height: 100%;
+
+				/* Setting width & height to auto prevents the browser from stretching or squishing the video */
+				width: auto;
+				height: auto;
+
+				/* Center the video */
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+				}
+
+		#footer {
+			position: relative;
+			margin: 0px auto 0px auto;
+			text-align: center;
+			background-color: #141414;
+			font: 12px/18px 'DIN_Bold', Helvetica, Arial, Verdana, geneva, sans-serif;
+			font-weight: normal;
+			font-style: normal;
+			color: #979797;
+			}
+			#footer p {
+				margin: 25px 0px 25px 0px;
+			}
+			#footer span {
+				color: #FFF;
+				margin-left: 30px;
+			}
+			#footer a {
+				font: 12px/18px 'DIN_Bold', Helvetica, Arial, Verdana, geneva, sans-serif;
+				font-weight: normal;
+				color: #FFF;
+			}
+		#interactive {
+			display: block;
+			/*
+			position: absolute;
+			top: 0;
+			left: 0;
+			 */
+			height: 100%;
+			width: 100%;
+			min-width: 480px;
+			overflow: hidden;
+			}
+
+		#preloader {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #000000;
+			pointer-events: none;
+			}
+			#preloaderInner {
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 80%;
+				max-width: 800px;
+				height: auto;
+				height: 100px;
+				margin: 0;
+				text-align: center;
+				transform: translate(-50%, -50%);
+				opacity: 0;
+				}
+				#preloaderCircle {
+					display: block;
+					position: relative;
+					width: 50px;
+					height: 50px;
+					margin: 0 auto 0 auto;
+					}
+					.circleGrey {
+						stroke: #232323;
+					}
+					.circleBlue {
+						stroke: #FFFFFF;
+					}
+
+		#scrollme {
+			position: absolute;
+			left: 50%;
+			bottom: 10px;
+			width: 30px;
+			height: 20px;
+			margin: 0px 0px 0px -15px;
+			opacity: 0;
+			}
+
+			#scrollme svg {
+				stroke: #FF0000;
+				}
+
+		#starlink-logo {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 613px;
+			height: 200px;
+			margin: -100px 0 0 -306px;
+			fill: #FFFFFF;
+			pointer-events: none;
+			}
+
+
+/**********************************************************************************
+INTERACTIVE AREA
+**********************************************************************************/
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			border: 0;
+		}
+
+/**********************************************************************************
+HOVERS AND STUFF
+**********************************************************************************/
+
+	body.isDesktop a.vehicle_nav_item,
+	body.isDesktop a.btn-reserve,
+	body.isDesktop a.btn-create,
+	body.isDesktop a.btn,
+	body.isDesktop #footer a,
+	body.isDesktop .navigation a {
+		-webkit-transition: color 1s cubic-bezier(0.25,1,0.25,1), background-color 1s cubic-bezier(0.25,1,0.25,1);
+		   -moz-transition: color 1s cubic-bezier(0.25,1,0.25,1), background-color 1s cubic-bezier(0.25,1,0.25,1);
+			-ms-transition: color 1s cubic-bezier(0.25,1,0.25,1), background-color 1s cubic-bezier(0.25,1,0.25,1);
+			 -o-transition: color 1s cubic-bezier(0.25,1,0.25,1), background-color 1s cubic-bezier(0.25,1,0.25,1);
+				transition: color 1s cubic-bezier(0.25,1,0.25,1), background-color 1s cubic-bezier(0.25,1,0.25,1);
+		} 
+	body.isDesktop #footer p a:hover,
+	body.isDesktop .navigation a:hover {
+		color: #24d2fd;
+		}
+	body.isDesktop a.btn:hover {
+		color: #000000;
+		}
+
+
+/**********************************************************************************
+QUERIES
+**********************************************************************************/
+
+	@media screen and (max-width: 800px) {
+		body {
+			font: 14px/18px Helvetica, Arial, Verdana, geneva, sans-serif;
+			font-weight: normal;
+			font-style: normal;
+			}
+
+		img {
+			border: 0;
+			padding: 0;
+			border-style: none;
+			}
+		/*
+		video {
+			display: none;
+		}
+		*/
+
+		a { font: 16px/28px Helvetica, Arial, Verdana, geneva, sans-serif; font-weight: normal; font-style: normal;}
+		a:link { color: #FFFFFF; text-decoration: none; }
+		a:active { color: #FFFFFF; text-decoration: none; outline: none; }
+		a:visited { color: #FFFFFF; text-decoration: none; }
+		a:hover { color: #FFFFFF; text-decoration: none; } /*#fa6966;*/
+		a:focus { outline: none; }
+		h1 {
+			font: 42px/42px 'DIN_Bold', Helvetica, Arial, Verdana, sans-serif;
+			font-weight: normal;
+			font-style: normal;
+			}
+
+		h2 {
+			font: 36px/36px 'DIN_Bold', Helvetica, Arial, Verdana, sans-serif;
+			font-weight: normal;
+			font-style: normal;
+			}
+
+		h3 {
+			font: 18px/24px 'DIN_Bold', Helvetica, Arial, Verdana, sans-serif;
+			font-weight: normal;
+			font-style: normal;
+			}
+
+				.caption {
+					font: 16px/100px 'DIN_Bold', Helvetica, Arial, Verdana, geneva, sans-serif;
+					}
+				.inner-left {
+					position: absolute;
+					bottom: 5%;
+					left: 5%;
+					width: 90%;
+					max-width: none;
+
+					top: 5%;
+					bottom: auto;
+					}
+				.inner-left-middle {
+					position: absolute;
+					bottom: 5%;
+					left: 5%;
+					width: 90%;
+					max-width: none;
+
+					top: 5%;
+					bottom: auto;
+					transform: translate(0%, 0%);
+					}
+
+
+
+				.inner-left-top {
+					position: absolute;
+					top: 5%;
+					left: 5%;
+					width: 90%;
+					max-width: none;
+					}
+				.inner-right {
+					position: absolute;
+					bottom: 5%;
+					right: 5%;
+					width: 90%;
+					max-width: none;
+
+					top: 5%;
+					bottom: auto;
+					}
+
+				.inner-right-top {
+					position: absolute;
+					top: 5%;
+					right: 5%;
+					width: 90%;
+					max-width: none;
+					}
+					#array p {
+						font: 18px/28px Helvetica, Arial, Verdana, geneva, sans-serif;
+					}
+
+			#starlink-logo {
+				width: 460px;
+				height: 150px;
+				margin: -75px 0 0 -230px;
+				}
+
+				#debris video {
+					display: none;
+				}
+
+				.description {
+					font: 12px/20px 'DIN_Bold', Helvetica, Arial, Verdana, sans-serif;
+					font-weight: normal;
+					}
+
+	}
+
+	@media screen and (min-width: 200px) and (max-width: 750px) {
+
+	}
+
+/**********************************************************************************
+GLOBAL MOBILE
+**********************************************************************************/
+	body.isMobile video {
+		display: none;
+	}
+
+/**********************************************************************************
+TABLET
+**********************************************************************************/
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+	}
+
+
+/**********************************************************************************
+MOBILE
+	@media screen and (max-device-width: 480px) and (orientation:landscape) {
+**********************************************************************************/
+	@media screen and (max-device-width: 480px) {
+	}
+
+
+/*
+     FILE ARCHIVED ON 04:39:56 May 24, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:22:50 Mar 13, 2020.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  esindex: 0.017
+  RedisCDXSource: 15.692
+  PetaboxLoader3.datanode: 132.343 (4)
+  captures_list: 160.983
+  load_resource: 92.76
+  exclusion.robots.policy: 0.187
+  CDXLines.iter: 13.584 (3)
+  PetaboxLoader3.resolve: 56.771
+  LoadShardBlock: 126.1 (3)
+  exclusion.robots: 0.202
+*/
