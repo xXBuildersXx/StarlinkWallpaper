@@ -223,7 +223,6 @@
 		onWindowResize();
 
 		initButtons();
-	}
 
 	function playIntro() {
 		isGlobeRotated = true;
