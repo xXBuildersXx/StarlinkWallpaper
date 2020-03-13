@@ -216,17 +216,9 @@
 	var stepComplete = arrayExecuter.stepComplete_instant.bind(arrayExecuter);
 
 	function initExperience() {
-		document.getElementById("interactive").addEventListener( 'mousedown', onDocumentMouseDown, false );
-		document.getElementById("interactive").addEventListener( 'mousemove', onDocumentMouseMove, false );
-		document.getElementById("interactive").addEventListener( 'mouseup', onDocumentMouseUp, false );
-		document.getElementById("interactive").addEventListener( 'mouseleave', onDocumentMouseLeave, false );
-
-		document.getElementById("interactive").addEventListener( 'touchstart', onDocumentTouchStart, false );
-		document.getElementById("interactive").addEventListener( 'touchmove', onDocumentTouchMove, false );
-		document.getElementById("interactive").addEventListener( 'touchend', onDocumentTouchEnd, false );
 		
 		// NO MOUSE SCROLLING THIS TIME
-    	//document.getElementById("interactive").addEventListener('mousewheel', onMouseWheel, false);
+    	document.getElementById("interactive").addEventListener('mousewheel', onMouseWheel, false);
 
 		document.addEventListener('gesturestart', function (e) {
 			e.preventDefault();
