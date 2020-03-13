@@ -89,8 +89,6 @@
 		container = document.getElementById("interactive");
 
 		var width  = window.innerWidth, height = window.innerHeight;
-		
-		window.opacity = 1
 
 		scene = new THREE.Scene();
 		scene.fog = new THREE.Fog( 0x000000, 0, 400 );
@@ -228,7 +226,7 @@
 		document.getElementById("interactive").addEventListener( 'touchend', onDocumentTouchEnd, false );
 		
 		// NO MOUSE SCROLLING THIS TIME
-    	document.getElementById("interactive").addEventListener('mousewheel', onMouseWheel, false);
+    	//document.getElementById("interactive").addEventListener('mousewheel', onMouseWheel, false);
 
 		document.addEventListener('gesturestart', function (e) {
 			e.preventDefault();
@@ -256,6 +254,8 @@
 		introAnimation.fromTo( "#mask_x1 circle", 3, { attr:{ cx: 75, cy: 300, r: 200 } }, { attr:{ cx: 275, cy: 85, r: 200 }, ease: Expo.easeInOut }, 1 );
 		introAnimation.fromTo( "#mask_x2 circle", 3, { attr:{ cx: 340, cy: 185, r: 80 } }, { attr:{ cx: 230, cy: 90, r: 80 }, ease: Expo.easeInOut }, 1 );
 		//introAnimation.fromTo( "#mask_x2 rect", 3, { attr:{ y: 120 } }, { attr:{ y: 40 }, ease: Expo.easeInOut }, 0.1 );
+		
+		TweenMax.fromTo( "#scrollme", 1, { autoAlpha: 0 }, { autoAlpha: 1, yoyo: true, repeat: -1, ease: Linear.easeNone } );
 
 		introAnimation.timeScale(1);
 		introAnimation.play();
