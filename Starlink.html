@@ -1,0 +1,114 @@
+<!DOCTYPE html>    
+	<meta name="Starlink">
+    <meta itemprop="name" content="Starlink">
+    <meta itemprop="image" content="https://web.archive.org/web/20190524043947im_/https://www.starlink.com/images/share.jpg">
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=1">
+
+	<title>Starlink</title>
+    <link rel="stylesheet" type="text/css" href="./Starlink_files/normalize.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./Starlink_files/swiper.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./Starlink_files/layout.css" media="screen">
+    <link rel="icon" type="image/x-icon" href="./Starlink_files/favicon.ico">
+    <script type="text/javascript" src="./Starlink_files/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript" src="./Starlink_files/ArrayExecuter.js"></script>
+	<script type="text/javascript" src="./Starlink_files/three.min.js"></script>
+	<script type="text/javascript" src="./Starlink_files/Detector.js"></script>
+    <script type="text/javascript" src="./Starlink_files/TweenMax.min.js"></script>
+	<script type="text/javascript" src="./Starlink_files/ScrollToPlugin.min.js"></script>
+	<script type="text/javascript" src="./Starlink_files/DrawSVGPlugin.min.js"></script>
+	<script type="text/javascript" src="./Starlink_files/swiper.min.js"></script>
+	<script type="text/javascript" src="./Starlink_files/detection.js"></script>
+    <script type="text/javascript" src="./Starlink_files/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="./Starlink_files/animation.gsap.min.js"></script>
+	<script type="x-shader/x-vertex" id="line_vertexshader">
+		attribute float alpha;
+		varying float vAlpha;
+
+		void main() {
+        	vAlpha = alpha;
+			vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+			gl_Position = projectionMatrix * mvPosition;
+		}
+	</script>
+	<script type="x-shader/x-fragment" id="line_fragmentshader">
+		uniform vec3 color;
+    	varying float vAlpha;
+
+ 		uniform vec3 fogColor;
+		uniform float fogNear;
+		uniform float fogFar;
+
+		void main() {
+			gl_FragColor = vec4( color, 1.0 );
+			gl_FragColor = vec4(  color, vAlpha );
+
+			#ifdef USE_FOG
+				#ifdef USE_LOGDEPTHBUF_EXT
+					float depth = gl_FragDepthEXT / gl_FragCoord.w;
+				#else
+					float depth = gl_FragCoord.z / gl_FragCoord.w;
+				#endif
+				float fogFactor = smoothstep( fogNear, fogFar, depth );
+				gl_FragColor.rgb = mix( gl_FragColor.rgb, fogColor, fogFactor );
+			#endif
+		}
+	</script>
+</head>
+
+<body class="isDesktop">
+	<div id="wrapper">
+		<div id="globe" class="quickjump section">
+			<div class="section-inner resize" style="height: 677px;">
+				<div id="interactive"><canvas width="1018" height="677" style="width: 1018px; height: 677px;"></canvas></div>
+				<div id="scrollme" style="visibility: inherit; opacity: 0.332;">
+					<svg width="30px" height="20px">
+						<path stroke="#ffffff" stroke-width="2px" d="M2.000,2.000 L15.000,18.000 L28.000,2.000 "></path>
+					</svg>
+				</div>
+				<svg id="starlink-logo" x="0px" y="0px" viewBox="0 0 460 150">
+					<clippath id="mask_x1">
+						<circle cx="275" cy="85" r="200"></circle>
+					</clippath>
+					<clippath id="mask_x2">
+						<circle cx="230" cy="90" r="80"></circle>
+					</clippath>
+					<g id="letters">
+						<path id="letter-s" class="letter" d="M164,142.2h2.8c0.1,0.9,0.4,1.5,0.8,1.8c0.4,0.4,1.1,0.5,2,0.5c1.7,0,2.5-0.7,2.5-2c0-0.6-0.2-1.1-0.5-1.4
+							c-0.3-0.3-0.9-0.5-1.6-0.7l-1.5-0.2c-2.8-0.5-4.2-1.9-4.2-4.3c0-1.4,0.5-2.6,1.4-3.4c1-0.8,2.2-1.3,3.8-1.3c1.5,0,2.7,0.4,3.6,1.2
+							c0.9,0.8,1.4,2,1.5,3.4h-2.8c0-0.8-0.3-1.3-0.7-1.6c-0.4-0.3-1-0.5-1.7-0.5c-0.8,0-1.3,0.2-1.7,0.5s-0.6,0.8-0.6,1.5
+							c0,0.5,0.2,1,0.5,1.3c0.3,0.3,0.9,0.5,1.6,0.7l1.6,0.3c2.7,0.5,4,1.9,4,4.4c0,1.6-0.5,2.8-1.5,3.6c-1,0.8-2.3,1.2-4,1.2
+							c-1.7,0-3-0.4-3.9-1.2C164.6,145,164.1,143.8,164,142.2z" style="visibility: inherit; opacity: 1;"></path>
+						<path id="letter-t" class="letter" d="M188.5,134v13h-3v-13h-4v-2.6h10.9v2.6H188.5z" style="visibility: inherit; opacity: 1;"></path>
+						<path id="letter-a" class="letter" d="M200.9,143.9l-0.9,3h-3.1l5.5-15.5h2.4l5.5,15.5h-3.1l-0.9-3H200.9z M203.6,135.5l-1.9,6h3.8L203.6,135.5z" style="visibility: inherit; opacity: 1;"></path>
+						<path id="letter-r" class="letter" d="M220.3,140.7v6.3h-2.9v-15.5h5.9c1.5,0,2.7,0.4,3.6,1.2s1.4,2,1.4,3.4c0,1-0.2,1.9-0.7,2.6s-1.2,1.2-2,1.6
+							l3.4,6.8h-3.4l-2.9-6.3H220.3z M223.1,138.2c0.7,0,1.2-0.2,1.6-0.6c0.4-0.4,0.6-0.9,0.6-1.6c0-0.6-0.2-1.1-0.6-1.5
+							c-0.4-0.4-0.9-0.6-1.6-0.6h-2.8v4.2H223.1z" style="visibility: inherit; opacity: 1;"></path>
+						<path id="letter-l" class="letter" d="M239.2,131.4v13h6.8v2.6h-9.7v-15.5H239.2z" style="visibility: inherit; opacity: 1;"></path>
+						<path id="letter-i" class="letter" d="M256.6,131.4V147h-2.9v-15.5H256.6z" style="visibility: inherit; opacity: 1;"></path>
+						<path id="letter-n" class="letter" d="M276.7,147h-2.9l-5.7-9.7v9.7H265v-15.5h2.9l5.7,9.7v-9.7h2.9V147z" style="visibility: inherit; opacity: 1;"></path>
+						<path id="letter-k" class="letter" d="M287.9,142.6v4.3h-2.9v-15.5h2.9v7.2l5.4-7.2h3.5l-5,6.2l5.4,9.3h-3.4l-3.8-6.9L287.9,142.6z" style="visibility: inherit; opacity: 1;"></path>
+					</g>
+					<g id="logo">
+						<g id="x1" clip-path="url(#mask_x1)">
+							<path class="logo_x" d="M168.4,112.2l-3.9,3.8h34.5C292,22.6,425.9,6,460,3.2l0-0.1C273.9,13.8,187.9,93.4,168.4,112.2" style="visibility: inherit; opacity: 1;"></path>
+						</g>
+						<g id="x2" clip-path="url(#mask_x2)">
+								<path class="logo_x" d="M263.2,116h34.1l-47.2-34.8c-5.7,3.9-11.6,8.3-17.2,12.7L263.2,116z" style="visibility: inherit; opacity: 1;"></path>
+								<path class="logo_x" d="M200.9,44.6h-34.1l40,29.3c5.8-3.9,12.5-8.1,18.7-11.7L200.9,44.6z" style="visibility: inherit; opacity: 1;"></path>
+						</g>
+					</g>
+				</svg>
+				<div id="preloader" style="visibility: hidden; opacity: 0;">
+					<div id="preloaderInner" style="visibility: inherit; opacity: 1;">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" id="preloaderCircle" style="transform: matrix(0, 1, -1, 0, 0, 0);">
+							<circle cx="25" cy="25" r="23" stroke-width="2" fill="none" class="circleGrey" style="visibility: inherit; opacity: 1; stroke-dashoffset: 0; stroke-dasharray: none;"></circle>
+							<circle cx="25" cy="25" r="23" stroke-width="3" fill="none" class="circleBlue" style="stroke-dashoffset: -145.513; stroke-dasharray: 1e-05px, 155.513px; visibility: inherit; opacity: 1;"></circle>
+						</svg>
+					</div>
+				</div>
+				<script type="text/javascript" src="./Starlink_files/threed.js"></script>
+			</div>
+		<div>
+    </div>
+	<script type="text/javascript" src="./Starlink_files/core.js"></script>
+	<!-- HTCSSM 1.0 -->
